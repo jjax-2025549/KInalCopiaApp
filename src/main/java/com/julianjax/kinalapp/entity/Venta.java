@@ -20,7 +20,7 @@ public class Venta {
     private BigDecimal total;
 
     @Column(name = "estado")
-    private int estado;
+    private Integer estado; //se ha cambiado a Integer para aceptar null
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "Clientes_dpi_cliente")
@@ -30,9 +30,10 @@ public class Venta {
     @JoinColumn(name = "Usuarios_codigo_usuario")
     private Usuario usuario;
 
-    public Venta() {}
+    public Venta() {
+    }
 
-    public Venta(Long codigoVenta, LocalDate fechaVenta, BigDecimal total, int estado, Cliente cliente, Usuario usuario) {
+    public Venta(Long codigoVenta, LocalDate fechaVenta, BigDecimal total, Integer estado, Cliente cliente, Usuario usuario) {
         this.codigoVenta = codigoVenta;
         this.fechaVenta = fechaVenta;
         this.total = total;
@@ -41,16 +42,22 @@ public class Venta {
         this.usuario = usuario;
     }
 
+    //Getters y Setters
     public Long getCodigoVenta() { return codigoVenta; }
     public void setCodigoVenta(Long codigoVenta) { this.codigoVenta = codigoVenta; }
+
     public LocalDate getFechaVenta() { return fechaVenta; }
     public void setFechaVenta(LocalDate fechaVenta) { this.fechaVenta = fechaVenta; }
+
     public BigDecimal getTotal() { return total; }
     public void setTotal(BigDecimal total) { this.total = total; }
-    public int getEstado() { return estado; }
-    public void setEstado(int estado) { this.estado = estado; }
+
+    public Integer getEstado() { return estado; }
+    public void setEstado(Integer estado) { this.estado = estado; }
+
     public Cliente getCliente() { return cliente; }
     public void setCliente(Cliente cliente) { this.cliente = cliente; }
+
     public Usuario getUsuario() { return usuario; }
     public void setUsuario(Usuario usuario) { this.usuario = usuario; }
 }
