@@ -15,39 +15,24 @@ public interface IUsuarioService {
 
     //Metodo que devuelve una lista de todos los Usuarios
     List<Usuario> listarTodos();
-    /*
-     * List<Usuario> lo que hace es devolver una lista
-     * de objetos de la entidad Usuarios
-     */
 
     //Nuevo metodo que lista solo los activos
     List<Usuario> listarActivos();
 
     //Metodo que guarda un Usuario en la BD
     Usuario guardar(Usuario usuario);
-    //Parámetros: Recibe un objeto Usuario con los datos a
-    //guardar
 
     //Optional - Contenedor que puede o no tener valor
     //evita el error de NullPointerException
-    Optional<Usuario> buscarPorId(int id);
+    Optional<Usuario> buscarPorId(Long id);
 
     //Método que actualiza un Usuario
-    Usuario actualizar(int id, Usuario usuario);
-    /*
-     * Parametros - id: ID del usuario a actualizar
-     * Usuario usuario: Objeto con los datos nuevos
-     * Retorna un objeto de tipo Usuario ya actualizado
-     */
+    Usuario actualizar(Long id, Usuario usuario);
 
-    /*
-     * Metodo de tipo void para eliminar a un Usuario
-     * void: no retorna ningún valor o dato
-     * Elimina un Usuario por su ID
-     */
-    void eliminar(int id);
+    //Metodo de tipo void para eliminar a un Usuario
+    void eliminar(Long id);
 
     //boolean - Retorna true si existe y false sino existe
-    boolean existePorId(int id);
+    boolean existePorId(Long id);
 
 }
