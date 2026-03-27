@@ -56,7 +56,7 @@ public class VentaService implements IVentaService {
             throw new RuntimeException("Venta no encontrada con el id: " + id);
         }
         // Forzamos el ID de la URL al objeto para evitar inconsistencias
-        venta.setCodigoVenta(id.intValue());
+        venta.setCodigoVenta(id);
         return ventaRepository.save(venta);
     }
 
