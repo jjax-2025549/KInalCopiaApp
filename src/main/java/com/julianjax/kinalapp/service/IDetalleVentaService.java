@@ -9,7 +9,7 @@ public interface IDetalleVentaService {
     //Listar todos los detalles registrados en el sistema
     List<DetalleVenta> listarTodos();
 
-    //Guardar un nuevo detalle 
+    //Guardar un nuevo detalle
     DetalleVenta guardar(DetalleVenta detalle);
 
     //Buscar un detalle especifico por su ID
