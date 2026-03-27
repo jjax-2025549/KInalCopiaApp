@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
 
-    // Spring genera automáticamente el SELECT * FROM usuarios WHERE estado = ?
+    //spring genera automáticamente el SELECT * FROM usuarios WHERE estado = ?
     List<Usuario> findByEstado(int estado);
 
 }
