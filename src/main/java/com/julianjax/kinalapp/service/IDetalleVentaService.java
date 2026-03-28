@@ -15,6 +15,9 @@ public interface IDetalleVentaService {
     //Buscar un detalle especifico por su ID
     Optional<DetalleVenta> buscarPorId(Long id);
 
+    //Actualizar un detalle existente
+    DetalleVenta actualizar(Long id, DetalleVenta detalle);
+
     //Eliminar un detalle de venta
     void eliminar(Long id);
 

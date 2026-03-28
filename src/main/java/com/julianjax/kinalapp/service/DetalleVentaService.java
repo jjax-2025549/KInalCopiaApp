@@ -26,7 +26,7 @@ public class DetalleVentaService implements IDetalleVentaService {
 
     @Override
     public DetalleVenta guardar(DetalleVenta detalle) {
-        //Aqui es donde se guarda el producto amarrado a la venta
+        // Aqui es donde se guarda el producto amarrado a la venta
         return detalleVentaRepository.save(detalle);
     }
 
@@ -34,6 +34,17 @@ public class DetalleVentaService implements IDetalleVentaService {
     @Transactional(readOnly = true)
     public Optional<DetalleVenta> buscarPorId(Long id) {
         return detalleVentaRepository.findById(id);
+    }
+
+    @Override
+    public DetalleVenta actualizar(Long id, DetalleVenta detalle) {
+        // Validamos que el detalle exista antes de actualizar
+        if (!detalleVentaRepository.existsById(id)) {
+            throw new RuntimeException("DetalleVenta no encontrado con el id: " + id);
+        }
+        // Forzamos el ID de la URL al objeto
+        detalle.setCodigoDetalleVenta(id);
+        return detalleVentaRepository.save(detalle);
     }
 
     @Override

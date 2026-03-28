@@ -1,0 +1,612 @@
+{
+  "info": {
+    "_postman_id": "4909e425-6d89-43cf-bb23-a3afaa2615d3",
+    "name": "KinalApp",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52318990",
+    "_collection_link": "https://go.postman.co/collection/52318990-4909e425-6d89-43cf-bb23-a3afaa2615d3?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Usuarios",
+      "item": [
+        {
+          "name": "Listar Todos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8999/usuarios",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8999",
+              "path": [
+                "usuarios"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Crear",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\": \"julian123\",\r\n    \"password\": \"1234\",\r\n    \"email\": \"julian@gmail.com\",\r\n    \"rol\": \"admin\",\r\n    \"estado\": 1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8999/usuarios",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8999",
+              "path": [
+                "usuarios"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8999/usuarios/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8999",
+              "path": [
+                "usuarios",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Actualizar",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"codigoUsuario\": 1, \r\n\"username\": \"jjax_pro\", \r\n\"password\": \"456\", \r\n\"email\": \"julian.jax@kinal.edu.gt\", \r\n\"rol\": \"ADMIN\", \r\n\"estado\": 1}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8999/usuarios/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8999",
+              "path": [
+                "usuarios",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8999/usuarios/4",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8999",
+              "path": [
+                "usuarios",
+                "4"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Clientes",
+      "item": [
+        {
+          "name": "Crear",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"DPICliente\": \"9999999999999\", \r\n\"nombreCliente\": \"Julian\", \r\n\"apellidoCliente\": \"Jax\", \r\n\"direccion\": \"Guatemala\", \r\n\"estado\": 1}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8999/clientes",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8999",
+              "path": [
+                "clientes"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8999/clientes",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8999",
+              "path": [
+                "clientes"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar DPI",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8999/clientes/1234567890102",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8999",
+              "path": [
+                "clientes",
+                "1234567890102"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Actualizar",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"DPICliente\": \"1234567890102\", \r\n\"nombreCliente\": \"Julian Jax\", \r\n\"apellidoCliente\": \"Editado\", \r\n\"direccion\": \"Antigua Guatemala\", \r\n\"estado\": 1}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8999/clientes/1234567890102",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8999",
+              "path": [
+                "clientes",
+                "1234567890102"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8999/clientes/9999999999999",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8999",
+              "path": [
+                "clientes",
+                "9999999999999"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Productos",
+      "item": [
+        {
+          "name": "Crear",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"descripcion\": \"Monitor 24p\", \r\n\"precioUnitario\": 1200.0, \r\n\"stock\": 15}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8999/productos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8999",
+              "path": [
+                "productos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar Todos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8999/productos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8999",
+              "path": [
+                "productos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8999/productos/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8999",
+              "path": [
+                "productos",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Actualizar",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"codigoProducto\": 1,\r\n    \"descripcion\": \"Laptop Dell Latitude\",\r\n    \"precioUnitario\": 5500.0,\r\n    \"stock\": 10\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8999/productos/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8999",
+              "path": [
+                "productos",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8999/productos/",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8999",
+              "path": [
+                "productos",
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Ventas",
+      "item": [
+        {
+          "name": "Crear",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"fechaVenta\": \"2026-03-27\",\r\n    \"total\": 1500.00,\r\n    \"estado\": 1,\r\n    \"cliente\": {\r\n        \"DPICliente\": \"1234567890102\",\r\n        \"nombreCliente\": \"Julian\",\r\n        \"apellidoCliente\": \"Jax\",\r\n        \"direccion\": \"Guatemala\",\r\n        \"estado\": 1\r\n    },\r\n    \"usuario\": {\r\n        \"codigoUsuario\": 1,\r\n        \"username\": \"julian123\",\r\n        \"password\": \"1234\",\r\n        \"email\": \"julian@gmail.com\",\r\n        \"rol\": \"admin\",\r\n        \"estado\": 1\r\n    }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8999/ventas",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8999",
+              "path": [
+                "ventas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar Todos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8999/ventas",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8999",
+              "path": [
+                "ventas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8999/ventas/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8999",
+              "path": [
+                "ventas",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Actualizar",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8999/ventas/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8999",
+              "path": [
+                "ventas",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8999/ventas/4",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8999",
+              "path": [
+                "ventas",
+                "4"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "DetalleVenta",
+      "item": [
+        {
+          "name": "Crear",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"cantidad\": 5,\r\n    \"precioUnitario\": 300.0,\r\n    \"venta\": {\r\n        \"codigoVenta\": 3,\r\n        \"fechaVenta\": \"2026-03-27\",\r\n        \"total\": 1500.0,\r\n        \"estado\": 1\r\n    },\r\n    \"producto\": {\r\n        \"codigoProducto\": 1,\r\n        \"descripcion\": \"Monitor Gaming\",\r\n        \"precioUnitario\": 300.0,\r\n        \"stock\": 10\r\n    }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8999/detalles",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8999",
+              "path": [
+                "detalles"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar Todos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8999/detalles",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8999",
+              "path": [
+                "detalles"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8999/detalles/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8999",
+              "path": [
+                "detalles",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Actualizar",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"cantidad\": 3,\r\n    \"precioUnitario\": 300.00,\r\n    \"subtotal\": 900.00,\r\n    \"producto\": {\r\n        \"codigoProducto\": 1\r\n    },\r\n    \"venta\": {\r\n        \"codigoVenta\": 3\r\n    }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8999/detalles/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8999",
+              "path": [
+                "detalles",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8999/detalles/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8999",
+              "path": [
+                "detalles",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

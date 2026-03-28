@@ -18,29 +18,37 @@ public class ProductoController {
         this.productoService = productoService;
     }
 
+    // GET: Lista todos los productos disponibles en la base de datos
     @GetMapping
     public ResponseEntity<List<Producto>> listar() {
-        //Obtenemos la lista de todos los productos
         return ResponseEntity.ok(productoService.listarTodos());
     }
 
+    // GET: Busca un producto específico por su ID
     @GetMapping("/{id}")
     public ResponseEntity<Producto> buscarPorId(@PathVariable Long id) {
-        //Buscamos un producto por su ID unico
         return productoService.buscarPorId(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
 
+    // POST: Crea un nuevo producto y devuelve el estado 201 (Created)
     @PostMapping
     public ResponseEntity<Producto> guardar(@RequestBody Producto producto) {
-        //Registramos un nuevo producto en el sistema
         return new ResponseEntity<>(productoService.guardar(producto), HttpStatus.CREATED);
     }
 
+    // PUT: Actualiza un producto existente. Recibe el ID en la URL y los datos en el Body.
+    @PutMapping("/{id}")
+    public ResponseEntity<Producto> actualizar(@PathVariable Long id, @RequestBody Producto producto) {
+        // El servicio se encarga de buscar el ID y sobreescribir los datos
+        return ResponseEntity.ok(productoService.actualizar(id, producto));
+    }
+
+    // DELETE: Elimina un producto por ID si no tiene dependencias en otras tablas
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> eliminar(@PathVariable Long id) {
-        //Validamos si existe antes de borrar para responder correctamente
+        // Validamos si el producto existe antes de intentar borrarlo
         if (!productoService.existePorId(id)) {
             return ResponseEntity.notFound().build();
         }
