@@ -6,6 +6,7 @@ const listarDetalles = async () => {
         const data = await res.json();
         const tabla = document.getElementById('cuerpo-tabla-detalles');
         tabla.innerHTML = "";
+
         data.forEach(d => {
             tabla.innerHTML += `
                 <tr>
@@ -14,10 +15,15 @@ const listarDetalles = async () => {
                     <td>${d.producto.descripcion}</td>
                     <td>${d.cantidad}</td>
                     <td class="text-center">
-                        <button class="btn btn-danger btn-sm" onclick="alert('ERROR: Prohibido alterar registros de auditoría/FK')">Eliminar</button>
+                        <button class="btn btn-danger btn-sm" onclick="alert('ERROR: No se puede eliminar por integridad referencial (FK)')">
+                            Eliminar
+                        </button>
                     </td>
                 </tr>`;
         });
-    } catch (e) { console.error(e); }
+    } catch (e) {
+        console.error("Error en Detalle Venta:", e);
+    }
 };
+
 document.addEventListener('DOMContentLoaded', listarDetalles);
