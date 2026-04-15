@@ -1,0 +1,42 @@
+:root {
+    --kinal-dark: #212529;
+    --kinal-blue: #0d6efd;
+}
+
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar {
+    background: linear-gradient(90deg, #212529 0%, #343a40 100%);
+    border-bottom: 3px solid var(--kinal-blue);
+}
+
+.card {
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+h3 {
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+.table thead {
+    border-bottom: 2px solid rgba(0,0,0,0.1);
+}
+
+/* Para que la tabla 5 no se mire tan kilométrica */
+.table-responsive {
+    max-height: 400px;
+    overflow-y: auto;
+}
