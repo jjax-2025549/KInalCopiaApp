@@ -1,15 +1,11 @@
-const URL_API = "http://localhost:8999/ventas";
-
-// 1. Esta función jala los datos del servidor
 const listarVentas = async () => {
     try {
-        const respuesta = await fetch(URL_API); // Petición GET
-        const ventas = await respuesta.json();  // Convertimos a JSON
+        const respuesta = await fetch(URL_API);
+        const ventas = await respuesta.json();
 
         const tabla = document.getElementById('cuerpo-tabla-ventas');
-        tabla.innerHTML = ""; // Limpiamos la tabla antes de llenarla
+        tabla.innerHTML = "";
 
-        // 2. Recorremos cada venta y creamos la fila
         ventas.forEach(venta => {
             tabla.innerHTML += `
                 <tr>
@@ -21,15 +17,21 @@ const listarVentas = async () => {
                         <button class="btn btn-warning btn-sm" onclick="prepararEdicion(${venta.codigoVenta})">
                             Editar
                         </button>
+                        <button class="btn btn-danger btn-sm" onclick="errorRestriccion()">
+                            Eliminar
+                        </button>
                     </td>
                 </tr>
             `;
         });
-        console.log("Datos cargados con éxito");
     } catch (error) {
-        console.error("No se pudo jalar la info. ¿Está encendido el servidor?", error);
+        console.error("Error:", error);
     }
 };
 
-// 3. Ejecutar la función automáticamente al abrir la página
+// Función para mostrar el error que pidió el profe
+const errorRestriccion = () => {
+    alert("ERROR: No se pueden eliminar ni actualizar llaves primarias o foráneas por integridad referencial.");
+};
+
 document.addEventListener('DOMContentLoaded', listarVentas);
