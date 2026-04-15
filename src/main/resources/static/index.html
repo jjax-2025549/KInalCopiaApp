@@ -5,16 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KinalApp - Julian Jax (Full Dashboard)</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="bg-light">
 
-<nav class="navbar navbar-dark bg-dark sticky-top shadow">
+<nav class="navbar navbar-dark bg-dark sticky-top shadow mb-4">
     <div class="container">
         <a class="navbar-brand fw-bold" href="#">KINAL APP 2026 - Dashboard General</a>
     </div>
 </nav>
 
-<div class="container mt-4 pb-5">
+<div class="container pb-5">
+
+    <div class="d-flex gap-2 mb-4">
+        <button class="btn btn-primary shadow-sm" data-bs-toggle="modal" data-bs-target="#modalCliente">
+            + Nuevo Cliente
+        </button>
+        <button class="btn btn-success shadow-sm" data-bs-toggle="modal" data-bs-target="#modalVenta">
+            + Registrar Venta
+        </button>
+    </div>
+
     <section class="mb-5">
         <h3 class="text-primary border-bottom pb-2">1. Registro de Ventas</h3>
         <div class="table-responsive card shadow-sm">
@@ -68,13 +79,7 @@
         <div class="table-responsive card shadow-sm">
             <table class="table table-hover align-middle m-0">
                 <thead class="table-danger text-dark">
-                <tr>
-                    <th>ID Detalle</th>
-                    <th>ID Venta</th>
-                    <th>Producto</th>
-                    <th>Cant.</th>
-                    <th class="text-center">Acciones</th>
-                </tr>
+                <tr><th>ID Detalle</th><th>ID Venta</th><th>Producto</th><th>Cant.</th><th class="text-center">Acciones</th></tr>
                 </thead>
                 <tbody id="cuerpo-tabla-detalles"></tbody>
             </table>
@@ -82,6 +87,40 @@
     </section>
 </div>
 
+<div class="modal fade" id="modalCliente" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content border-0 shadow">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title fw-bold">Agregar Nuevo Cliente</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body p-4">
+                <div class="mb-3">
+                    <label class="form-label fw-bold">DPI</label>
+                    <input type="text" id="dpi" class="form-control" placeholder="Ej: 1234567890101">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Nombre</label>
+                    <input type="text" id="nom" class="form-control" placeholder="Nombre del cliente">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Apellido</label>
+                    <input type="text" id="ape" class="form-control" placeholder="Apellido del cliente">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Dirección</label>
+                    <input type="text" id="dir" class="form-control" placeholder="Dirección completa">
+                </div>
+            </div>
+            <div class="modal-footer bg-light">
+                <button class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button class="btn btn-primary" onclick="guardarCliente()">Guardar Cliente</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/app.js"></script>
 <script src="js/productos.js"></script>
 <script src="js/clientes.js"></script>
