@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 // @RestController = @Controller + @ResponseBody
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/clientes")
 // Todas las rutas deben empezar por /clientes
